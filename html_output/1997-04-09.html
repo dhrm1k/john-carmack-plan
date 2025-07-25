@@ -15,6 +15,16 @@
         <h1 class="page-title">1997-04-09</h1>
         <p>Would anyone complain if I took out lookstrafe and keyboard look modifier? I'm  cleaning up code, and I don't know of anyone that ever uses those features.</p>
 <p>update: ok, +klook has it's supporters. Anyone for lookstrafe?</p>
+        <div class="page-nav"><a href="1997-04-08.html" class="nav-btn prev-btn">← Previous</a><a href="1997-04-24.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1997-04-08.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1997-04-24.html";
+    }
+});
+</script>
 </body>
 </html>

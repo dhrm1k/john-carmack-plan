@@ -27,6 +27,16 @@
 <p>I'm sure lots of people realize that immediately, but it only truly sunk in for me recently. In thinking back over the years, I can see myself feeling around the problem, implementing partial journaling of network packets, and included the "fixedtime" cvar to eliminate most timing reproducibility issues, but I never hit on the proper global solution. I had always associated journaling with turning an interactive application into a batch application, but I never considered the small modification necessary to make it applicable to a realtime application.</p>
 <p>In fact, I was probably blinded to the obvious because of one of my very first successes: one of the important technical achievements of Commander Keen 1 was that, unlike most games of the day, it adapted its play rate based on the frame speed (remember all those old games that got unplayable when you got a faster computer?). I had just resigned myself to the non-deterministic timing of frames that resulted from adaptive simulation rates, and that probably influenced my perspective on it all the way until this project.</p>
 <p>Its nice to see a problem clearly in its entirety for the first time, and know exactly how to address it.</p>
+        <div class="page-nav"><a href="1998-09-10.html" class="nav-btn prev-btn">← Previous</a><a href="1998-11-03.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1998-09-10.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1998-11-03.html";
+    }
+});
+</script>
 </body>
 </html>

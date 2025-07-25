@@ -46,6 +46,16 @@ why do menu sounds ometimes not work?
 combo look/strafe
 fix lightning
 push trigger directionality wierdness</p>
+        <div class="page-nav"><a href="1996-05-30.html" class="nav-btn prev-btn">← Previous</a><a href="1996-06-01.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1996-05-30.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1996-06-01.html";
+    }
+});
+</script>
 </body>
 </html>

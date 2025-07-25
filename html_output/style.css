@@ -171,3 +171,39 @@ li {
 .content {
     contain: layout style paint;
 }
+
+/* Page Navigation */
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3em;
+    padding-top: 2em;
+    border-top: 1px solid #f0f0f0;
+}
+
+.nav-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f8f9fa;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    background: #0066cc;
+    color: white;
+    border-color: #0066cc;
+    text-decoration: none;
+}
+
+.prev-btn {
+    margin-right: auto;
+}
+
+.next-btn {
+    margin-left: auto;
+}

@@ -39,6 +39,16 @@
 <li>light up characters</li>
 </ul>
 <p>vsync on high framerates</p>
+        <div class="page-nav"><a href="1996-02-19.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        // No previous page
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1996-02-19.html";
+    }
+});
+</script>
 </body>
 </html>

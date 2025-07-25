@@ -58,6 +58,16 @@
 <li>some renderer optimizations</li>
 <li>better multitexture collapsing</li>
 </ul>
+        <div class="page-nav"><a href="1999-09-06.html" class="nav-btn prev-btn">← Previous</a><a href="1999-09-29.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1999-09-06.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1999-09-29.html";
+    }
+});
+</script>
 </body>
 </html>

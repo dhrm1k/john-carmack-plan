@@ -22,6 +22,16 @@
 <p>I am currently using client side simulation to smooth out the beat  frequency interactions between server packet arrival and client frame  times.  In the shipping version of Quake, some latency was introduced  on purpose to keep the displayed frame simulation time between the last  two packets from the server so that the variability in arrival time  could be smoothed out.  In QuakeWorld, I am always starting with the  most current packet, and using simulation to smooth out the variability. This &lt;100ms of client side motion seems to be very manageable, and cuts  out some real latency as well as doing the gueswork.</p>
 <p>It looks like I am going to split the QuakeWorld client into multiple  threads to reduce the avg 1/2 frame latency between input and packet  sending.  This is also a step towards building a multi-threaded Quake  renderer, which will let multi-cpu NT machines render twice as fast. Lets hope the windows thread scheduler is decent...</p>
 <p>I have been cutting down the message sizes a bit here and there as  well.  On a modem link, every couple bytes I save translates into a  millisecond of latency saved.  I cut an average of 17 bytes from the  server to client and 8 from the client to server today.</p>
+        <div class="page-nav"><a href="1996-08-08.html" class="nav-btn prev-btn">← Previous</a><a href="1996-08-12.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1996-08-08.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1996-08-12.html";
+    }
+});
+</script>
 </body>
 </html>

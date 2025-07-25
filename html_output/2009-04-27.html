@@ -31,6 +31,16 @@
 <p>The iPhone interface around the game is all done nicely. Wolf Classic got dinged a bit for the blocky look of the buttons and interface components. I didn't actually see any complaints about the crappy monospace font, but it deserved some. Everything looks good now.</p>
 <p>The initial release will be for OS 2.x, and support multiplayer over WiFi. A later release will be for 3.x only, and support bluetooth multiplayer. I looked into the possibility of 3G multiplayer, but the latencies just aren't good enough -- I see 380 or so pings from my phone to local servers. This was interesting, because I have talked to other hardware vendors that claim 3G latencies of half that. I'm not sure if there are issues with the iPhone, issues with AT&amp;T's network in Dallas, or if the vendor was just mistaken about what they were getting. One anecdotal report is that iPhones work better in Japan than here, so it may be infrastructure.</p>
 <p>I will probably have another update later with more technical details about the logic behind the new rendering architecture (rewritten for &gt; 2x the speed of the original prBoom GL renderer), touch control issues, and so on.</p>
+        <div class="page-nav"><a href="2009-03-26.html" class="nav-btn prev-btn">← Previous</a><a href="2009-05-27.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "2009-03-26.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "2009-05-27.html";
+    }
+});
+</script>
 </body>
 </html>

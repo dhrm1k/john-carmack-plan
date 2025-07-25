@@ -18,6 +18,16 @@
 <p>Quake 3 will finally have full support for international keyboards and character sets. This turned out to be a bit more trouble than expected because of the way Quake treated keys and characters, and it led to a rewrite of a lot of the keyboard handling, including the full cleanup and improvement of text fields.</p>
 <p>A similar cleanup of the text printing hapened when Cash implemented general colored text: we had at least a half dozen different little loops to print strings with slightly different attributes, but now we have a generalized one that handles embedded color commands or force-to-color printing.</p>
 <p>Amidst all the high end graphics work, sometimes it is nice to just fix up something elementary.</p>
+        <div class="page-nav"><a href="1998-05-04.html" class="nav-btn prev-btn">← Previous</a><a href="1998-05-19.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1998-05-04.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1998-05-19.html";
+    }
+});
+</script>
 </body>
 </html>

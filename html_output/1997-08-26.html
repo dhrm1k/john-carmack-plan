@@ -26,6 +26,16 @@
 </li>
 </ul>
 <p>qe4: view menu checkboxes are wrong</p>
+        <div class="page-nav"><a href="1997-08-25.html" class="nav-btn prev-btn">← Previous</a><a href="1997-08-27.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1997-08-25.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1997-08-27.html";
+    }
+});
+</script>
 </body>
 </html>

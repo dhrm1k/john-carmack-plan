@@ -23,6 +23,16 @@
 <p>Now for the bad news: a full size level takes several minutes to process on our quad alpha, and you MUST do a vis before running qrad (otherwise it would take about 1000 times longer).  This wouldn't be out of reach even on mortal pentium systems (you can ask for a rough aproximation instead of the full job), except for the working set size.  &gt;100 megs.  I'm NOT being wasteful here, either.  I use a halved bit array for visibility interconnects, and sparse scaled shorts for energy transference.</p>
 <p>I will release the source after we have been using it in production for a while, in case anyone wants to take a shot at reformulating it to be less memory intensive.  It would be possible to get it down to 32 megs with some reduction in quality and a lot more wasted time, but then the run time would be obnoxious.  I expect homebrew levels are going to have to stick with light.exe.</p>
 <p>I am looking forward to doing a little more work on the other utilities as well.  I want to break qbsp up into three seperate programs, so it will be able to run on machines with &lt;32 megs of memory.  Light can be sped up significantly if the PVS information is taken advantage of the way I did in qrad. I also have some theories on changing the algorithmic order of full vis processing time that I want to look into, especially now that the vis stage is put before production lighting.</p>
+        <div class="page-nav"><a href="1996-08-22.html" class="nav-btn prev-btn">← Previous</a><a href="1996-09-03.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1996-08-22.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1996-09-03.html";
+    }
+});
+</script>
 </body>
 </html>

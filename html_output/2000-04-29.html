@@ -32,6 +32,16 @@
 <p>This is a truly striking result. In retrospect, it seems obvious that with adds, multiplies, table lookups, and stencil tests that you can perform any computation, but most people were working under the assumption that there were fundamentally different limitations for "realtime" renderers vs offline renderers. It may take hundreds or thousands of passes, but it clearly defines an approach with no fundamental limits. This is very important. I am looking forward to his Siggraph paper this year.</p>
 <p>Once I set down and started writing new renderers targeted at GeForce level performance, the precision issue has started to bite me personally. There are quite a few times where I have gotten visible banding after a set of passes, or have had to worry about ordering operations to avoid clamping. There is nothing like actually dealing with problems that were mostly theoretical before..</p>
 <p>64 bit pixels. It is The Right Thing to do. Hardware vendors: don't you be the company that is the last to make the transition.</p>
+        <div class="page-nav"><a href="2000-04-06.html" class="nav-btn prev-btn">← Previous</a><a href="2000-05-08.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "2000-04-06.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "2000-05-08.html";
+    }
+});
+</script>
 </body>
 </html>

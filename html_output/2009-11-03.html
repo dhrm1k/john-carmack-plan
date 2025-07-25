@@ -54,6 +54,16 @@
 <p>So, I had the game playing well over WiFi, but communication over the Bluetooth interface was significantly worse.  There was an entire frame of additional latency versus WiFi, and the user mode Bluetooth daemon was also sucking up 10% of the CPU.  That would have been livable, but there were regular surges in the packet delivery rate that made it basically unplayable.</p>
 <p>Surging implies a buffer somewhere backing up and then draining, and I had seen something similar but less damaging occasionally on WiFi as well, so I wondered if there might be some iPhone system communication going on.  I spent a little while with WireShark trying to see if the occasional latency pileup was due to actual congestion, and what was in the packets, but I couldn't get my Macbook into promiscuous WiFi mode, and I didn't have the time to configure a completely new system.</p>
 <p>In the end, I decided to just cut out the Bluetooth networking and leave it with WiFi.  There was a geek-neatness to having a net game with one client on WiFi and another on Bluetooth, but I wasn't going to have time to wring it all out.</p>
+        <div class="page-nav"><a href="2009-05-27.html" class="nav-btn prev-btn">← Previous</a><a href="2010-10-26.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "2009-05-27.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "2010-10-26.html";
+    }
+});
+</script>
 </body>
 </html>

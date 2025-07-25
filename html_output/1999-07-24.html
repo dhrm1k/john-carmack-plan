@@ -32,6 +32,16 @@
 <p>Assembly code the interpreter loop. The compiler is generating good code, but there is still room for gain. I don't want to pursue this until the high level optimizations are wrung out.</p>
 <p>Load time compilation from bytecode to native code. This would bloat a lot, especially on RISC cpus. I'm not sure that a straightforward implementation would have significant speed benefits over an assembly interpreter loop, and I won't have time for writing an aggressive native optimizer.</p>
 <p>Deal with the performance cost and optimize the renderer some more to compensate.</p>
+        <div class="page-nav"><a href="1999-07-03.html" class="nav-btn prev-btn">← Previous</a><a href="1999-07-29.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1999-07-03.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1999-07-29.html";
+    }
+});
+</script>
 </body>
 </html>

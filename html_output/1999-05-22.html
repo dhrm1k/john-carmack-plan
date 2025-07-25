@@ -31,6 +31,16 @@
 <p>The much larger problem is that you lose tight control over when things occur. If the framerates are low enough, it isn't a huge issue, but for applications running at 30+ fps, you really don't want to trust the OS scheduler to coordinate multiple threads and have them all get in every frame. Yes, with explicit sleep() calls you can sort of get it working, but at that point, you might as well not be using threads.</p>
 <p>A good example of not-quite-in-sync issues in the windows mouse performance. A PS/2 mouse only samples 40 times a second, so when you get an app updating at around that speed, you will get 0/1/2 scheduling variances.</p>
 <p>They are also not terribly portable, and a pain in the ass to debug.</p>
+        <div class="page-nav"><a href="1999-05-19.html" class="nav-btn prev-btn">← Previous</a><a href="1999-05-26.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1999-05-19.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1999-05-26.html";
+    }
+});
+</script>
 </body>
 </html>

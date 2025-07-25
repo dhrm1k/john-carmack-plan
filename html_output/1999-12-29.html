@@ -23,6 +23,16 @@
 <p>Don't play on madhouse levels with tons of players. None of the normal Q3 maps were really designed for more than eight players, and many were only designed for four.</p>
 <p>Don't play in the wide open maps unless there are only a couple other players. Four very active players in a wide open area are enough to bog down a modem connection.</p>
 <p>I just implemented "sv_minPing" / "sv_maxPing" options so servers can restrict themselves to only low ping or high ping players. This is done based on the ping of the challenge response packet, rather than any in-game pings. There are a few issues with that - a LPB may occasionally get into a HPB server if they happen to get a network hiccup at just the right time, and the number used as a gate will be closer to the number shown in the server list, rather than the number seen in gameplay. I would reccomend "sv_minPing 200" as a reasonable breakpoint.</p>
+        <div class="page-nav"><a href="1999-12-25.html" class="nav-btn prev-btn">← Previous</a><a href="1999-12-30.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1999-12-25.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1999-12-30.html";
+    }
+});
+</script>
 </body>
 </html>

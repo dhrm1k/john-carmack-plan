@@ -35,6 +35,16 @@
 <p>I suspect I will enjoy working with BREW, the competing standard for cell phone games. It lets you use raw C/C++ code, or even, I suppose, assembly language, which completely changes the design options. Unfortunately, they only have a quarter the market share that the J2ME phones have. Also, the relatively open java platform development strategy is what got me into this in the first place - one night I just tried writing a program for my cell phone, which isn't possible for the more proprietary BREW platform.</p>
 <p>I have a serious suggestion for the handset designers to go with my idle bitching. I have been told that fixing data packet latency is apparently not in the cards, and it isn't even expected to improve much with the change to 3G infrastructure. Packet data communication seems more modern, and has the luster of the web, but it is worth realizing that for network games and many other flashy Internet technologies like streaming audio and video, we use packets to rather inefficiently simulate a switched circuit.</p>
 <p>Cell phones already have a very low latency digital data path - the circuit switched channel used for voice. Some phones have included cellular modems that use either the CSD standard (circuit switched data) at 9.8Kbits or 14.4Kbits or the HSCSD standard (high speed circuit switched data) at 38.4Kbits or 57.6Kbits. Even the 9.8Kbit speed would be great for networked games. A wide variety of two player peer-to-peer games and multiplayer packet server based games could be implemented over this with excellent performance. Gamers generally have poor memories of playing over even the highest speed analog modems, but most of the problems are due to having far too many buffers and abstractions between the data producers/consumers and the actual wire interface. If you wrote eight bytes to the device and it went in the next damned frame (instead of the OS buffer, which feeds into a serial FIFO, which goes into another serial FIFO, which goes into a data compressor, which goes into an error corrector, and probably a few other things before getting into a wire frame), life would be quite good. If you had a real time scheduler, a single frame buffer would be sufficient, but since that isn't likely to happen, having an OS buffer with accurate queries of the FIFO positions is probably best. The worst gaming experiences with modems weren't due to bandwidth or latency, but to buffer pileup.</p>
+        <div class="page-nav"><a href="2004-12-31.html" class="nav-btn prev-btn">← Previous</a><a href="2006-05-02.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "2004-12-31.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "2006-05-02.html";
+    }
+});
+</script>
 </body>
 </html>

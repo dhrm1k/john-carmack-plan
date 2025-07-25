@@ -24,6 +24,16 @@
 <p>A GL2 driver won't give any theoretical advantage over the current back ends optimized for cards with 7+ texture capability, but future research work will almost certainly be moving away from the lower level coding practices, and if some new vendor pops up (say, Rendition back from the dead) with a next-gen card, I would strongly urge them to implement GL2 instead of proprietary extensions.</p>
 <p>I have not done a detailed comparison with Cg. There are a half dozen C-like graphics languages floating around, and honestly, I don't think there is a hell of a lot of usability difference between them at the syntax level. They are all a whole lot better than the current interfaces we are using, so I hope syntax quibbles don't get too religious. It won't be too long before all real work is done in one of these, and developers that stick with the lower level interfaces will be regarded like people that write all-assembly PC applications today. (I get some amusement from the all-assembly crowd, and it can be impressive, but it is certainly not effective)</p>
 <p>I do need to get up on a soapbox for a long discourse about why the upcoming high level languages MUST NOT have fixed, queried resource limits if they are going to reach their full potential. I will go into a lot of detail when I get a chance, but drivers must have the right and responsibility to multipass arbitrarily complex inputs to hardware with smaller limits. Get over it.</p>
+        <div class="page-nav"><a href="2002-06-25.html" class="nav-btn prev-btn">← Previous</a><a href="2003-01-29.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "2002-06-25.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "2003-01-29.html";
+    }
+});
+</script>
 </body>
 </html>

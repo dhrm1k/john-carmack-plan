@@ -35,6 +35,16 @@
 <li>fixed first weapopn switch problem</li>
 <li>convert all joystick axis to button events (twist is now bindable)</li>
 </ul>
+        <div class="page-nav"><a href="1999-10-14.html" class="nav-btn prev-btn">← Previous</a><a href="1999-10-23.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1999-10-14.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1999-10-23.html";
+    }
+});
+</script>
 </body>
 </html>

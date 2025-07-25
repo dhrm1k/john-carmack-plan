@@ -33,6 +33,16 @@
 <li>changed sound fallbacks to "visor" from "male"</li>
 <li>made turbulent texcoords based off of xyz instead of st</li>
 </ul>
+        <div class="page-nav"><a href="1999-05-08.html" class="nav-btn prev-btn">← Previous</a><a href="1999-05-10.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1999-05-08.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1999-05-10.html";
+    }
+});
+</script>
 </body>
 </html>

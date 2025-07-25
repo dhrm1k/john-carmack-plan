@@ -19,6 +19,16 @@
 <p>I have spent a while thinking about the causes of the patches for Q2. Our original plan was to just have the contents of 3.12 as the first patch, but have it out a month earlier than we did.</p>
 <p>The first several patches were forced due to security weaknesses. Lesson learned - we need to design more security conscious to try to protect against the assholes out there.</p>
 <p>The cause for the upcoming 3.13 patch is the same thing that has caused us a fair amount of trouble through Q2's development - instability in the gamex86 code due to its decending from QC code in Q1. It turns out that there were lots of bugs in the original QC code, but because of its safe interpreted nature (specifically having a null entity reference the world) they never really bothered anyone. We basically just ported the QC code to regular C for Q2 (it shows in the code) and fixed crash bugs as they popped up. We should have taken the time to redesign more for C's strengths and weaknesses.</p>
+        <div class="page-nav"><a href="1998-02-17.html" class="nav-btn prev-btn">← Previous</a><a href="1998-03-12.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1998-02-17.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1998-03-12.html";
+    }
+});
+</script>
 </body>
 </html>

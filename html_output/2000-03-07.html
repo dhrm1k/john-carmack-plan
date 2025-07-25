@@ -59,6 +59,16 @@ While ( memory allocation for new texture fails )
 <p>Aside from all the basic swapping issue, there are a couple of other hardware trends that push things this way.</p>
 <p>Embedded dram should be a driving force. It is possible to put several megs of extremely high bandwidth dram on a chip or die with a video controller, but won't be possible (for a while) to cram a 64 meg geforce in. With virtualized texturing, the major pressure on memory is drastically reduced. Even an 8mb card would be sufficient for 16 bit 1024x768 or 32 bit 800x600 gaming, no matter what the texture load.</p>
 <p>The only thing that prevents a geometry processor based card from turning almost any set of commands in a display list into a single static dma buffer is the fact that textures may be swapped in and out, causing the register programming in the buffer to be wrong. With virtual texture addressing, a texture's address never changes, and an arbitrarily complex model can be described in a static dma buffer.</p>
+        <div class="page-nav"><a href="2000-02-24.html" class="nav-btn prev-btn">← Previous</a><a href="2000-03-27.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "2000-02-24.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "2000-03-27.html";
+    }
+});
+</script>
 </body>
 </html>

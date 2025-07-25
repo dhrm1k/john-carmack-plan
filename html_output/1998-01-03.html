@@ -37,6 +37,16 @@
 <p>Client message overflows. The maximum number of commands that can be issued in a user packet has been limited. This prevents a client from doing enough "says" or "kills" to overflow the message buffers of other clients.</p>
 <p>Challenge on connection. A connection request to a server is now a two stage process of requesting a challenge, then using it to connect. This prevents denial of service attacks where connection packets with forged IPs are flooded at a server, preventing any other users from connecting until they timeout.</p>
 <p>Client packet checksumming. The packets are encoded in a way that will prevent proxies that muck with the packet contents, like the stoogebot, from working.</p>
+        <div class="page-nav"><a href="1998-01-02.html" class="nav-btn prev-btn">← Previous</a><a href="1998-01-04.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1998-01-02.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1998-01-04.html";
+    }
+});
+</script>
 </body>
 </html>

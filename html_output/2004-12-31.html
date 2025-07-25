@@ -29,6 +29,16 @@
 <p>Speaking of bump mapped environment sampling.. I spent a little while tracking down a highlight that I thought was misplaced. In retrospect it is obvious, but I never considered the artifact before: With a bump mapped surface, some of the on-screen normals will actually be facing away from the viewer. This causes minor problems with lighting, but when you are making a reflection vector from it, the vector starts reflecting into the opposite hemisphere, resulting in some sky-looking pixels near bottom edges on the model. Clamping the surface normal to not face away isn't a good solution, because you get areas that "see right through" to the environment map, because a reflection past a clamped perpendicular vector doesn't change the viewing vector. I could probably ramp things based on the geometric normal somewhat, and possibly pre-calculate some data into the normal maps, but I decided it wasn't a significant enough issue to be worth any more development effort or speed hit.</p>
 <p>Speaking of cube maps.. The edge filtering on cube maps is showing up as an issue for some algorithms. The hardware basically picks a face, then treats it just like a 2D texture. This is fine in the middle of the texture, but at the edges (which are a larger and larger fraction as size decreases) the filter kernel just clamps instead of being able to sample the neighbors in an adjacent cube face. This is generally a non-issue for classic environment mapping, but when you start using cube map lookups with explicit LOD bias inputs (say, to simulate variable specular powers into an environment map) you can wind up with a surface covered with six constant color patches instead of the smoothly filtered coloration you want. The classic solution would be to implement border texels, but that is pretty nasty for the hardware and API, and would require either the application or the driver to actually copy the border texels from all the other faces. Last I heard, upcoming hardware was going to start actually fetching from the other side textures directly. A second-tier chip company claimed to do this correctly a while ago, but I never actually tested it.</p>
 <p>Topics continue to chain together, I'll probably write some more next week.</p>
+        <div class="page-nav"><a href="2003-02-07.html" class="nav-btn prev-btn">← Previous</a><a href="2005-05-27.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "2003-02-07.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "2005-05-27.html";
+    }
+});
+</script>
 </body>
 </html>

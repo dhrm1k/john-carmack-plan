@@ -40,6 +40,16 @@
 <p>The future is in floating point framebuffers.  One of the most noticeable thing this will get you without fundamental algorithm changes is the ability to use a correct display gamma ramp without destroying the dark color precision.  Unfortunately, using a floating point framebuffer on the current generation of cards is pretty difficult, because no blending operations are supported, and the primary thing we need to do is add light contributions together in the framebuffer.  The workaround is to copy the part of the framebuffer you are going to reference to a texture, and have your fragment program explicitly add that texture, instead of having the separate blend unit do it.  This is intrusive enough that I probably won't hack up the current codebase, instead playing around on a forked version.</p>
 <p>Floating point framebuffers and complex fragment shaders will also allow much better volumetric effects, like volumetric illumination of fogged areas with shadows and additive/subtractive eddy currents.</p>
 <p>John Carmack</p>
+        <div class="page-nav"><a href="2002-06-27.html" class="nav-btn prev-btn">← Previous</a><a href="2003-02-07.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "2002-06-27.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "2003-02-07.html";
+    }
+});
+</script>
 </body>
 </html>

@@ -28,7 +28,7 @@ def convert_markdown_to_html():
     html_files = []
     
     # Convert each markdown file to HTML
-    for md_file in md_files:
+    for i, md_file in enumerate(md_files):
         print(f"Converting {md_file}...")
         
         # Read markdown content from archive directory
@@ -48,6 +48,29 @@ def convert_markdown_to_html():
         html_filename = md_file.replace('.md', '.html')
         title = md_file.replace('.md', '').replace('_', ' ')  # Keep hyphens for dates
         
+        # Determine previous and next files
+        prev_file = md_files[i-1].replace('.md', '.html') if i > 0 else None
+        next_file = md_files[i+1].replace('.md', '.html') if i < len(md_files) - 1 else None
+        
+        # Create navigation buttons HTML
+        nav_buttons = '<div class="page-nav">'
+        if prev_file:
+            nav_buttons += f'<a href="{prev_file}" class="nav-btn prev-btn">← Previous</a>'
+        if next_file:
+            nav_buttons += f'<a href="{next_file}" class="nav-btn next-btn">Next →</a>'
+        nav_buttons += '</div>'
+        
+        # Create keyboard navigation script
+        keyboard_nav = f"""<script>
+document.addEventListener('keydown', function(e) {{
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {{
+        {'window.location.href = "' + prev_file + '";' if prev_file else '// No previous page'}
+    }} else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {{
+        {'window.location.href = "' + next_file + '";' if next_file else '// No next page'}
+    }}
+}});
+</script>"""
+        
         full_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +87,9 @@ def convert_markdown_to_html():
     <main class="content">
         <h1 class="page-title">{title}</h1>
         {html_content}
+        {nav_buttons}
     </main>
+    {keyboard_nav}
 </body>
 </html>"""
         
@@ -263,6 +288,42 @@ li {
 /* Performance optimizations */
 .content {
     contain: layout style paint;
+}
+
+/* Page Navigation */
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3em;
+    padding-top: 2em;
+    border-top: 1px solid #f0f0f0;
+}
+
+.nav-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f8f9fa;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    background: #0066cc;
+    color: white;
+    border-color: #0066cc;
+    text-decoration: none;
+}
+
+.prev-btn {
+    margin-right: auto;
+}
+
+.next-btn {
+    margin-left: auto;
 }
 """
     

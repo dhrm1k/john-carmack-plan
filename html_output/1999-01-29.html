@@ -25,6 +25,16 @@
 <p>The float encoder can check for an integral value in a certain range and send that as a smaller number of bits, say 13 or so. If the value isn't integral, it will be transmitted as a full 32 bit float.</p>
 <p>The other thing I am investigating is sub-byte delta encoding of floating point values. Even with arbitrary precision movement deltas, the sign and exponent bits change with very low frequency except when you are very near the origin. At the minimum, I should be able to cut the standard player coordinate delta reps to three bytes from four.</p>
 <p>So, the bottom line is that the bandwidth won't move much (it might even go down if I cut the integral bits below 15), the maps become unbounded in size to the point of single precision roundoff, and the client doesn't have to care about position jittering (which was visible in Q3 code that will be released).</p>
+        <div class="page-nav"><a href="1999-01-10.html" class="nav-btn prev-btn">← Previous</a><a href="1999-03-03.html" class="nav-btn next-btn">Next →</a></div>
     </main>
+    <script>
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1999-01-10.html";
+    } else if (e.key === 'ArrowRight' && !e.ctrlKey && !e.metaKey) {
+        window.location.href = "1999-03-03.html";
+    }
+});
+</script>
 </body>
 </html>
