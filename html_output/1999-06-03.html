@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1999-06-03</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1999-06-03</h1>
+        <p>Whee! Lots of hate mail from strafe-jupers!</p>
+<p>Some reasonable messages have convinced me that a single immediate jump after landing may be important to gameplay. I'll experiment with it.</p>
+<p>Strafe jumping is an exploitable bug. Just because people have practiced hard to allow themselves to take advantage of it does not justify it's existance. When I tried fixing the code so that it just didn't work, I thought it changed the normal running movement in an unfortunate way.</p>
+<p>In the absense of powerups or level features (wind tunnels, jump pads, etc), the game characters are supposed to be badasses with big guns. Arnold Schwartzenegger and Sigourney Weaver don't get down a hallway by hopping like a bunny rabbit.</p>
+<p>This is personal preference, but when I play online, I enjoy it more when people are running around dodging, rather than hopping.</p>
+<p>My personal preference just counts a lot. :-)</p>
+<p>btw, here are the current weapon effects:</p>
+<p>gauntlet: 50 pts, 400 msec / punch
+machinegun: 10 pts, 100 msec / shot
+shotgun: 11 pellets of 10 each, 1000 msec / shot
+rocket launcher: 100 pts direct hit, or 100 pts splash damage falling off
+over 120 world units, 800 msec / shot
+plasma gun: 20 pts direct hit or 15 pts splash damage over 15 units,
+100 msec / shot
+railgun: 100 pts, 1500 msec / shot
+lightning gun: 8 pts, 33 msec / trace, max range 768 units
+grenade launcher: 100 pts direct hit, or 100 pts splash over 150 units,
+800 msec / shot.
+bfg: 40 pts instant splash damage over 100 units, 100 msec / shot
+flamethrower: to be determined, but short range / wide angle</p>
+<p>Splash damage is calculated from the edge of the player's box, unlike
+quake1, where it was calculated froom the player's origin.</p>
+<ul>
+<li>ignore cl_maxpackets on LAN</li>
+<li>changed cl_packetdup to 1 by default, and archived</li>
+<li>defaulted com_maxfps to 100 and archived, automatically disabling during timedemo. It was possible to lag out some client connections on ultra fast systems even with cl_maxpackets set fairly low due to a huge number of individual commands being created</li>
+<li>250 msec minimum time between landing and jumping again. I hate having players bouncing around all the time...</li>
+<li>fixed bug with large r_picmip values (white shotgun sight bug)</li>
+<li>new lightning and rail beam drawing</li>
+<li>player torso twitches with pain sounds</li>
+<li>r_drawstrips changed to r_primitives and archived, with changes: default "0" uses glDrawElements if compiled vertex arrays are present, or strips of glArrayElement if not. "1" forces strips, "2" forces drawElements, "-1" skips drawing</li>
+<li>increased rocket speed to 900 from 800. decreased direct hit damage from 120 to 100. splash damage same as 1.05</li>
+<li>removed sound-in-use dialog, auto skip after second try</li>
+<li>made userinfo persistant on server across level changes</li>
+<li>allow different servers to respond to a challenge, allowing redirecting server proxies</li>
+<li>notice bad ip addresses for connection: 192.1234.123.122</li>
+<li>removed neck length pivot to prevent view poking into low subdivided curves. Also make aiming when looking up or down more precise.</li>
+</ul>
+    </main>
+</body>
+</html>

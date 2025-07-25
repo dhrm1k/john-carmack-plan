@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1999-04-26</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1999-04-26</h1>
+        <p>Interpreting the lagometer (the graph in the lower right corner):</p>
+<p>The upper graph (blue/yellow) slides one pixel for every rendered frame. Blue lines below the baseline mean that the frame is interpolating between two valid snapshots. Yellow lines above the baseline mean the frame is extrapolating beyond the latest valid time. The length of the line is proportional to the time.</p>
+<p>The lower graph (green/yellow/red) slides one pixel for every received snapshot. By default, snapshots come 20 times a second, so if you are running &gt;20 fps, the top graph will move faster, and vice versa. A red bar means the snapshot was dropped by the network. Green and yellow bars are properly received snapshots, with the height of the bar proportional to the ping. A yellow bar indicates that the previous snapshot was intentionally supressed to stay under the rate limit.</p>
+<p>The upper graph indicates the consistancy of your connection. Ideally, you should always have blue bars of only a pixel or two in height. If you are commonly getting big triangles of yellow on the graph, your connection is inconsistant.</p>
+<p>In a heavy firefight, it is normal for modem players to see yellow bars in the bottom graph, which should return to green when the action quiets down. If you are getting several red bars visible, you may want to look for a server that drops less packets.</p>
+<p>There are a few tuning variables for people trying to optimize their connection:</p>
+<p>The most important one is "rate", which is what the connection speed option in the menu sets.</p>
+<p>We are fairly conservative with the values we set for the given modem speeds: 2500 for 28.8, 3000 for 33, and 3500 for 56k.</p>
+<p>You may actually be connecting faster than that, and modem compression may be buying you something, so you might get a better play experience by increasing the values slightly.</p>
+<p>If you connect at 50000 bps, try a rate of 5000, etc.</p>
+<p>I err on the conservative side, because too low of a rate will only make the movement of other things in the world choppy, while too high of a rate can cause huge amounts of lag.</p>
+<p>Note that the optimal rate will be somewhat lower than a rate for QW or Q2, because I now include the UDP packet header length in the bandwidth estimate.</p>
+<p>You can ask for a different number of snapshots by changing the "snaps" variable, but there isn't a lot of benefit to that. Dedicated servers run at 40hz, so stick to divisors of that: 40, 20 (default), 10. A snaps of 40 will usually just cause you to hit your rate limit a lot faster. It may be usefull for tuning rate, if nothing else.</p>
+<p>You can adjust the local timing point with "cg_timenudge ", which effectively adds local lag to try to make sure you interpolate instead of extrapolate. If you really want to play on a server that is dropping a ton of packets, a timenudge of 100 or so might make the game smoother.</p>
+<hr />
+<p>One more addition to net cvars:
+"cl_maxpackets" will restrict the maximum number of outgoing packets to prevent client to server rate problems. This does not limit the client framerate. This defaults to 20, which might actually be a bit low. You might try experimenting with raising this to 40.</p>
+<p>"cl_maxfps" still exists, but it will never need to be used for networking reasons.</p>
+<hr />
+<ul>
+<li>converted cvar allocation to indexes to allow range checking</li>
+<li>cgame converted over to use vmCvar_t instead of cvar_t needed for interpreted cgame</li>
+<li>fixed server crashing string bug</li>
+<li>adjusted scoreboard for 8 players</li>
+<li>show hostname on connection screen</li>
+<li>fixed null model warning on startup</li>
+<li>more space for hostname on local servers screen</li>
+<li>fixed mac Open Transport memory buffer bug, this was causing most of the mac crashes</li>
+<li>made Info_ValueForKey() case insensitive</li>
+<li>sv_privateClients, sv_privatePassword. this allows you to reserve slots on a public server for password access while allowing most to be freely available</li>
+<li>"server is full" message on connect screen</li>
+<li>archive handicap in config file</li>
+<li>cheat protect r_nocurves</li>
+<li>byte order independent zip checksum</li>
+<li>removed cl_stereo, use glConfig.stereoEnabled</li>
+</ul>
+    </main>
+</body>
+</html>

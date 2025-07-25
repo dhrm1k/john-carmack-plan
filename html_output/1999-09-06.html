@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1999-09-06</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1999-09-06</h1>
+        <p>It looks like we are going to go to a skeletal model system. Jim Dose of Ritual had already started on an exporter from character studio, so we decided to just meet in the middle.</p>
+<p>I implemented the loading and rendering support this weekend and tested it with a couple hand-inserted bones, so now we just need to write the glue between character studio and the new .md4 format.</p>
+<p>The new format is bone based, but it is NOT hierarchial. Each vertex just has an arbitrary weighted list of the bones that influence it. Bones are just 4x3 matricies of floats.</p>
+<p>A hierarchial skeleton has some advantages (angles instead of matricies, ability to do IK, etc), but this is a direct and simple replacement for our existing infrastructure that doesn't require any cached state per model instance.</p>
+<p>A single .md4 file holds multiple level of detail surface sets, which all share the same bone frames.</p>
+<p>In use, it is exactly like the existing models (interpolate between two frame numbers), it just saves a huge amount of space.</p>
+<p>I used perl to generate my test data, and it was definately faster than having a separate msdev open and doing it in C.</p>
+<p>I am trying to use parenthesis on all perl functions, but when I type "print", my fingers seem to have a flashback to applesoft basic fifteen years ago, and I wind up with bare quotes on prints and parens on everything else...</p>
+<p>Does anyone know if there is an existing msdev syntax coloring file for perl? (no, I don't want to switch to a different editor!)</p>
+<ul>
+<li>md4 model loading and displaying</li>
+<li>removed clip models from cgame, use renderer models instead</li>
+<li>fixed mover pushing again</li>
+<li>fixed bug with culling of mirrors made of multiple faces</li>
+<li>fixed quad on spinning machinegun</li>
+<li>surfaceparm alphashadow - This causes q3map -light to check individual texture pixels on transparant surfaces for light shadowing instead of making the entire surface either cast or not cast shadows</li>
+</ul>
+    </main>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1999-05-08</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1999-05-08</h1>
+        <p>There is one must-fix issue and a couple smaller issues remaining before the release candidate build, then we have to do a lot of testing on it. I made a lot of significant changes in the last week, and I'm sure there are some things we still need to sort out before we inflict it on the general public.</p>
+<p>We are aiming for sunday, but understand that that means sunday evening, not sunday morning.</p>
+<p>If saturday night / sunday morning testing on the release candidate turns up significant problems, we will put off the release until they are fixed. That could be later sunday night, or it might not make it until monday night.</p>
+<p>The previous release delays for win32 were issues out of our control, but this release rests squarely on me. The content and other issues are ready, but we still need to make sure all the new code is solid.</p>
+<ul>
+<li>fixed give item bug</li>
+<li>new first snapshot timing</li>
+<li>moved sun drawing outside of sky shader to fix showtris</li>
+<li>r_drawSun</li>
+<li>handle all shader tesselations in q3map with tjunc fixups</li>
+<li>different flatness epsilons for edge vs border grids</li>
+<li>reorganize sound directories</li>
+<li>removed footsteps on non-metalic and non-water surfaces</li>
+<li>fixed bug with multiple looping sounds</li>
+<li>client side predict teleporters, go to "hyperspace"</li>
+<li>precache remaining liquid sounds</li>
+<li>don't fire jumppad events if upward velocity</li>
+</ul>
+    </main>
+</body>
+</html>

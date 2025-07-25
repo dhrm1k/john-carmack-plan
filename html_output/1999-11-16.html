@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1999-11-16</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1999-11-16</h1>
+        <p>The demo servers have general purpose flood-protection that has caused some confusion.</p>
+<p>Clients are only allowed to make one command a second of any kind. This prevents excessive flooding by chats, model / name changes, and any other command that could possibly be exploited. The command streams are stalled, so it doesn't have any effect on processing order or reliability.</p>
+<p>This means that if you issue two commands immediately after one another, there will be a one second stall before the second command and all movement clears. You see this on the lagometer as yellow spiking up for a second, then dropping away.</p>
+<p>Hitting tab for the scoreboard sends a command, so you trigger the flood protection if you bang tab a couple times. This has been fixed so that the scoreboard will never send more than one update request every two seconds, but you will need to watch out for it in the existing demo.</p>
+<p>The defered model loading has also caused some confusion, but that is a feature, not a bug. :)</p>
+<p>In previous tests, you hitched for a second or two whenever a client with a new model or skin joined a game.</p>
+<p>In the demo, when a client joins the game they will be given the model and skin of someone else temporarily, so there is no hitch. The only time it will hitch on entry is if it is a team game and there isn't anyone on the team they join. I make sure the skin color is correct, even if the model isn't.</p>
+<p>These "defered" clients will be loaded when you bring up the scoreboard. You can do this directly by hitting tab, or you can have it happen for you when you die.</p>
+<p>The point is: you died BEFORE it hitched, not as a result of the hitch.</p>
+<p>The scoreboard header is up, but it is still a bit easy to miss.</p>
+<ul>
+<li>fixed high server idle cpu usage (it was spinning in place until maxfps was used!)</li>
+<li>fixed g_password, which is crashing in the demo</li>
+<li>moved svs.snapshotEntities to the hunk</li>
+<li>enable lagometer whenever running a non-local game</li>
+<li>cg_drawTeamOverlay cvar, set to 0 by default</li>
+<li>finished authorize work</li>
+<li>better reporting of unused highwater memory</li>
+</ul>
+    </main>
+</body>
+</html>

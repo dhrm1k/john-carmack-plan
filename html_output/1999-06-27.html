@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1999-06-27</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1999-06-27</h1>
+        <p>For the past couple years when talking to chip makers about new 3D features, 3D texture maps would always come up, and I would have to mutter something like: "I think it is a good thing, but I can't give you a really awesome example of using it. 3D Noise functions. Stuff like that."</p>
+<p>I have the awesome example now: Lighting.</p>
+<p>Through the entire development of Q3, I have been wanting to do dynamic lighting of the world differently. Many of the efficiencies gained by Q3's new map format result in larger and larger lightmaps while it reduces polygon count. That meant that even small dynamic lights may force a lot of work to generate new lighting textures.</p>
+<p>I had been wanting to find a way to trade off additional rendering passes for less CPU time.</p>
+<p>This is a perfect example of me outthinking myself.</p>
+<p>I knew it would have to be something with projecting a light spot texture onto the world geometry, but I am keenly enough aware of the issues and limitations in projecting a 2D texture onto 3D geometry that my mind kept looking at worst case scenarios -- how do you project a continuous texture onto the inside of a dome with the proper intensities, and some situations with curves. I thought it would require some non-trivial per triangle analysis and operations, when I really just wanted something that could be done on a per-vertex level.</p>
+<p>Recently, the 3D texture insight hit me.</p>
+<p>Create a 3D texture of, say, 32<em>32</em>32 texels and fill it with your light attenuation function, bright point in the center, fading off to black at the edge. Set it to clamp mode, so any values beyond the edges stay black. Set up a texture coordinate generation matrix to position the light relative to your models. Its a simple translate and scale. Set up lighting calculation to only generate a value based on the relative angles, ignoring attenuation. Use the resulting modulated texture mapping as your "lightmap" to modulate another texture pass, or add to a previous lighting pass.</p>
+<p>This has several important benefits:</p>
+<p>It looks good (and identical) on both small and large polygons. Vertex based lighting needs an appalling amount of tessellation to avoid visibly triangulation artifacts. Even if you tessellate to the same sample density as your lightmap grid (hundreds of thousands per map), vertex lighting still looks worse, because it is a triangular instead of bilinear interpolation.</p>
+<p>It can be done completely by upcoming lighting and texgen hardware, but is efficient in software implementations.</p>
+<p>It can be shadowed by either stencil volume shadows or shadow buffer tests.</p>
+<p>Post Q3A, I plan on doing a research engine that is fully dynamically lit and shadowed instead of using lightmaps.</p>
+<p>Ok, but we don't have 3D textures in any hardware now, so this doesn't help me for Q3A.</p>
+<p>I continued thinking along complex lines, like "Any planar slice of a spherical 3D texture will be a 2D circle, and the three triangle points can occupy any location on their respective rings".</p>
+<p>It still looked like a big mess.</p>
+<p>I got tired of thinking about it, and just started coding in some infrastructure to do extra lighting passes. I just made a gradient circle texture for the lighting, and generated the texture coordinates by just translating and scaling X and Y from the world coordinates.</p>
+<p>I got it running, grabbed a rocket launcher, and fired down a hallway. It looked just fine. I was stunned. I had been thinking about complex ramifications of weird edge cases for the past year when all it took was a couple hours of programming and the simplest possible approach to make it work decent. Sigh. :-)</p>
+<p>The only real addition required was a fading of the light contribution with Z distance from the surface. The downside to this hack is that while you get a nice ball of light moving over floors and ceilings, you only get a wash of light on walls. In hindsight, I can analyze this in the context of our games and say "Almost all movement and targeting takes place in the XY plane in a FPS, so accuracy along the Z axis is not necessary."</p>
+<p>The somewhat more obvious change to dynamic lighting that wasn't related to the projection issue is that I have it currently set up as a postprocess pass, rather than an additive pass on the lightmap. Adding to the lightmap is more "right", but it really complicates the multitexture implementation, and on some surfaces, the lightmap is actually done after the base texture, so it couldn't be added to. The end result is that brighter areas are changed more by dlights than dark areas. I don't feel TOO bad about that, because its not like the dlight is much of a proper lighting simulation even in the best case...</p>
+<ul>
+<li>fixed tourney restart</li>
+<li>fixed jittering on plats</li>
+<li>fixed ref use without a world</li>
+<li>new default image that lets you see mapping coordinates</li>
+<li>fixed reliable sequences on restarts and demos</li>
+<li>allow maxclients to change between levels</li>
+<li>randomize shell ejection start position and angles</li>
+<li>display attackers head after every wound</li>
+<li>added gamma and overbright support to mac version</li>
+<li>removed table from sound mixing</li>
+<li>remove smoke and blood puffs when you run through them</li>
+<li>set cheats to 1 on disconnect</li>
+<li>shader sort value is now floating point</li>
+<li>new trajectory type "TR_INTERPOLATE", skip interpoaltion for other types</li>
+<li>fixed door open timing</li>
+<li>fixed bug with &gt;8 portal areas</li>
+<li>added area print to r_shwocluster</li>
+<li>removed all the partial shader match cruft, fixing a crash-on-load</li>
+<li>fixed bug with personal shadows not being setup properly</li>
+<li>nomipmap shader parm split and expanded:
+nopicmip : ignores r_picmip so image will always be high res
+nomipmap : forces a single level texture, used for console font</li>
+<li>shrank sound mixing buffer for better caching</li>
+<li>new shader option: q3map_lightsubdivide. larger values make q3map -light proceed faster</li>
+<li>new vertex array interleaving</li>
+<li>fixed bmodels not counting patches in bounds</li>
+<li>fixed patch sphere culling on rotating entities</li>
+<li>cg_simpleItems now draws sprite items</li>
+<li>fixed serverid being 0 when map is started from cmdline</li>
+<li>fixed UI on mode changes</li>
+<li>replaced 1280<em>960 mode with 1280</em>1024</li>
+<li>test all rotated orders for tristrips from faces</li>
+<li>fixed RB_SurfacePolychain to not duplicate vertexes</li>
+<li>changed planar face surface type from a convex polygon to a general collection of coplanar triangles</li>
+<li>change renderer to use bmodel surface list instead of tree</li>
+<li>changed areabits pointer to areamask array</li>
+<li>fixed bad loop when client reliable message overflows</li>
+<li>fixed swapinterval after vid_restart</li>
+<li>wall mark clipping moved out of cgame, extended for better wrapping over multiple brushes</li>
+<li>picmip defaults to 1 under all cases now</li>
+<li>automatic curve LOD grouping</li>
+<li>duplicated SCR_ functions into cgame</li>
+<li>implemented Micahel Julier's optimization work</li>
+<li>implimented Michael Gold's SMP patch</li>
+<li>new reliable command transport</li>
+<li>use ENTITYNUM_NONE and ENTITYNUM_WORLD constants, which are now in MAX_GENTITIES range for safe net transport</li>
+<li>wait for attack released after respawning before firing</li>
+<li>added a delay before moving everyone to intermission spot</li>
+<li>fixed bug with regibbing of gibbed body ques</li>
+<li>blood trails behind gibs</li>
+<li>changed localents over to trajectories</li>
+<li>removed world as entity zero, clients are now 0 to MAXCLIENTS-1</li>
+<li>changed game interface functions to use clientnums instead of pointers</li>
+<li>removed speculative usercmd_t from user packets</li>
+<li>new item pickup code, fixed silent item pickup on grazing hits, and expanded the pickup range by 20% without changing the physical bounding box</li>
+<li>allow a single "quick jump" without delay</li>
+</ul>
+    </main>
+</body>
+</html>

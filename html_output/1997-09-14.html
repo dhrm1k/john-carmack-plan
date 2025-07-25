@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1997-09-14</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1997-09-14</h1>
+        <ul>
+<li>qdata grab alias numeric suffix</li>
+<li>
+<p>menu architecture</p>
+</li>
+<li>
+<p>make a portal entity</p>
+</li>
+<li>connect doors to portal entities</li>
+<li>treat portal contents like windows</li>
+<li>flood fill leafs, but stop at portals to count areas</li>
+<li>if actual leaf with portal contents should chose any area next + to it</li>
+<li>each portal brush should have exactly two areas bordering it</li>
+<li>server sends over a bit vector of areas visible to player</li>
+<li>
+<p>use area visibility as fast reject for line testing?</p>
+</li>
+<li>
+<p>should portal entities remain seperate, or just add a portal + field</p>
+</li>
+<li>to doors?</li>
+<li>builtin: SetPortalState (int pnum, qboolean open);</li>
+<li>portals MUST go in the structural bsp!</li>
+<li>each leaf has an area field</li>
+<li>each portal has two areas it connects</li>
+<li>all other data can be derived</li>
+<li>areas have the list of portals</li>
+<li>area * area * 2^portals == too large!</li>
+<li>must do dynamic flood fill</li>
+<li>
+<p>most portals will be closed, so flood fill is fast</p>
+</li>
+<li>
+<p>game pause</p>
+</li>
+<li>no status bar after death</li>
+</ul>
+<p>allow higher precision bmodel angle specification?
+put v_idle back in?
+super crouch jump?
+establish a client connection at startup to avoid localconnects?
+more bright areas in the game for contrast?
+throbbing health status pic
+weapon cycle command
+bigger font?
+allways have visible blood particles by face when hit?
+bounce health status around when hit?
+radius of alias model dlighting is greater than surface dlighting</p>
+<p>trinity: use mouse curssors for ui stuff?</p>
+<p>menu_move, menu_down, menu_up, menu_change, menu_slide</p>
+<p>trinity: software trilinear with second pass? only works if vertex lighting</p>
+    </main>
+</body>
+</html>

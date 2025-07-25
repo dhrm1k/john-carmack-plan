@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1996-03-22</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1996-03-22</h1>
+        <ul>
+<li>fixed bug with "alias" command that failed to add a newline</li>
+<li>fixed bug in command execution that sometimes mashed commands together</li>
+<li>added "impulse #" command to replace impulse0 impulse1, etc</li>
+<li>allowed "bind" and "alias" to grab the rest of the line, not just arg(3)</li>
+<li>don't clear impulse events every frame, so a weapon change will wait
+        for attack completion</li>
+<li>added "wait" command.  These changes allow:
+    bind g "impulse 5 ; +attack ; wait ; -attack ; impulse 2"</li>
+<li>
+<p>got demos mostly working</p>
+</li>
+<li>
+<p>worry about shutting down listen servers before connect / demo playback</p>
+</li>
+<li>remove item precache</li>
+<li>finish switching lights</li>
+<li>keyboard freelook</li>
+<li>do clients need keepalives?</li>
+</ul>
+<p>spikes coming through walls
+explosive nails
+change thresholding on trimapper in higher res!!!!!
+muzzle flashes</p>
+    </main>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1998-04-08</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1998-04-08</h1>
+        <p>Things are progressing reasonably well on the Quake 3 engine.</p>
+<p>Not being limited to supporting a 320*240 256 color screen is very, very nice, and will make everyone's lives a lot easier.</p>
+<p>All of our new source artwork is being done in 24 bit TGA files, but the engine will continue to load .wal files and .pcx files for developer's convenience. Each pcx can have its own palette now though, because it is just converted to 24 bit at load time.</p>
+<p>Q3 is going to have a fixed virtual screen coordinate system, independant of resolution. I tried that back in the original glquake, but the fixed coordinate system was only 320*200, which was excessively low. Q2 went with a dynamic layout at different resolutions, which was a pain, and won't scale to the high resolutions that very fast cards will be capable of running at next year.</p>
+<p>All screen drawing is now done assuming the screen is 640*480, and everything is just scaled as you go higher or lower. This makes laying out status bars and HUDs a ton easier, and will let us do a lot cooler looking screens.</p>
+<p>There will be an interface to let game dlls draw whatever they want on the screen, precisely where they want it. You can suck up a lot of network bandwidth doing that though, so some care will be needed.</p>
+<p>-</p>
+<p>Going to the completely opposite end of the hardware spectrum from quake 3..</p>
+<p>I have been very pleased with the fallout from the release of the DOOM source code.</p>
+<p>At any given spot in design space, there are different paths you can take to move forward. I have usually chosen to try to make a large step to a completely new area, but the temptation is there to just clean up and improve in the same area, continuously polishing the same program.</p>
+<p>I am enjoying seeing several groups pouring over DOOM, fixing it up and enhancing it. Cleaning up long standing bugs. Removing internal limitations. Orthogonalizing feature sets. Etc.</p>
+<p>The two that I have been following closest are Team TNT's BOOM engine project, which is a clear headed, well engineered improvement on the basic DOOM technical decisions, and Bruce Lewis' glDoom project.</p>
+<p>Any quakers feeling nostalgic should browse around:</p>
+<p>http://www.doomworld.com/</p>
+    </main>
+</body>
+</html>

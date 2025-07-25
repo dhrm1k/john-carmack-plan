@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1999-05-07</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1999-05-07</h1>
+        <ul>
+<li>changed grabbed items to SVF_NOCLIENT instead of EF_NODRAW now that the pickup event is on the player</li>
+<li>clear event flags with event on reset</li>
+<li>move playerstate to netfield bit communication</li>
+<li>fixed configstring delta sequencing issue after initial gamestate</li>
+<li>extended the netgraph: short red lines are missing client to server packets (need to drop 3 in a row)</li>
+<li>extended cg_debugevents</li>
+<li>increased cl_maxpackets to 30</li>
+<li>fixed bug with console field not getting drawwidth set</li>
+<li>fastsky implies noportals</li>
+<li>changed fastsky color</li>
+<li>q3map now fixes tjunctions at fog boundaries</li>
+<li>build optimized tree with visible hulls of sides</li>
+<li>adjusted plane culling to avoid some cracks</li>
+<li>r_facePlaneCull</li>
+<li>fixed too-lax colinear collapse to avoid some cracks</li>
+</ul>
+    </main>
+</body>
+</html>

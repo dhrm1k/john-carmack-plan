@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1997-12-01</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1997-12-01</h1>
+        <p>Quake 2 has mastered.</p>
+<p>Where we go from here:</p>
+<p>Point release.</p>
+<p>We should have a Quake 2 point release out shortly after the game gets in your hands. We intend to fix any bugs that turn up, improve the speed somewhat, and optimize for internet play in various ways. We will also be making several deathmatch only maps.</p>
+<p>Deathmatch in Q2 has gotten a lot of lan testing (Thresh, Redwood, and Vik Long helped quite a bit the last week with tuning), but not much internet testing. There are probably gaping holes in it, but we will address them soon.</p>
+<p>The deathmatch code in the shipping Q2 is also not designed to hold up against malicious users - there is no protection against clients being obnoxious and constantly changing skins, chat flooding, client-side cheating, or whatever.</p>
+<p>Q2 does checksum maps on the client side right now, so cheater maps won't work like they do in Q1, but cheater models and skins are still possible. I have some plans to combat that in the point release, but there are a lot of forms of cheating that can be implemented in proxies that are fundamentally not detectable. I can make it very painfully difficult for people to implement such things, but a very clever person with a dissasembler just can't be stopped completely.</p>
+<p>The server code and network protocol should be able to support ultra-large player counts, but I know I need to do some low-level work to get around operating system buffer limits before it will actually work. We will test at least a hundred players in a giant map for the point release, but we won't actually address the issues of making a rational game at that level (chat hierarchies, team spawning, etc). I am very much looking forward to seeing what the user community creates on that foundation.</p>
+<p>It is likely that the point release may have incompatable network protocols and savegames. Fair warning.</p>
+<p>Q2 Demo.</p>
+<p>After the point release, we will be making a new demo release. If you experienced compatability problems with q2test, or were unsatisfied with the quality in some way, you should look at the demo. The final product is much improved.</p>
+<p>Q2 Ports.</p>
+<p>We are commited to Win32 Alpha, Linux, irix, and rhapsody in that order. It is likely that a bunch of other ports will come later, but no promises. The presence of hardware-accelerated OpenGL on a platform will improve it's odds a lot. Zoid will probably prioritize Q2 CTF over other ports, so hold off on bugging him about ports for a while.</p>
+<p>Development tool release.</p>
+<p>I will basically be making publicly available a subset of the directory tree that we will deliver to our licensees. All the utility source code, the game dll source code, and probably some example source media - .map files, artwork, model source, etc.</p>
+<p>Q2 mission pack.</p>
+<p>Most of the company will be working on a mission pack while Brian and I write tools and technology for trinity.</p>
+<p>Trinity.</p>
+<p>I am going to rapidly wean myself off of working with quake so I can concentrate fully on new directions. The evolution of the Q2 codebase will be left to John Cash (until the mission pack ships) and Zoid.</p>
+<p>Everyone should keep in mind that any next-generation game that we produce is a LONG way off, so don't start getting all worked up over it, ok?</p>
+<p>For the curious, it does look like java is going to start playing a significant role in our future projects. All of the lightweight utilities will be java applications (some requiring OpenGL bindings). The heavy duty number crunching utilities will probably stay in C. It is still unclear how much of the game framework and the level editor we can get away with doing in java.</p>
+    </main>
+</body>
+</html>

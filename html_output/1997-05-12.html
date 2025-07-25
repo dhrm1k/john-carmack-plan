@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1997-05-12</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1997-05-12</h1>
+        <p>I have gotten several emails speculating that there will now be a native glide port of quake. Here is the straight answer:</p>
+<p>I have considered a glide port many times (especially now that the rendering code is in a dll), but I allways reach the conclusion that it wouldn't be justified.</p>
+<p>On the plus side, it could get a 10%-15% speedup over the OpenGL driver without going through too many contortions. Primarily by saving transforms for the lightmap pass and doing tightly packed vertex arrays for the enemy models.</p>
+<p>The big drawback is that every codepath that gets added holds back future innovation. Just having software and gl is a lot of work, and I have allready commited to verite support. This is a difficult point for some people to understand, but it is crucially important. The more places I need to rewrite a feature, the less likely I am to put it in. If I only had the opengl version to worry about, Quake 2 would be so much cooler..</p>
+    </main>
+</body>
+</html>

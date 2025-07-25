@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1998-04-17</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1998-04-17</h1>
+        <p>Yes, I bought an F50. No, I don't want a McLaren.</p>
+<p>We will be going back to the dragstrip in a couple weeks, and I will be exercising both the F50 and the TR there. Cash's supercharged M3 will probably show some of the porsches a thing or two, as well.</p>
+<p>I'll probably rent a road coarse sometime soon, but I'm not in too much of a hurry to run the F50 into the weeds.</p>
+<p>My TR finally got put back together after a terrific nitrous explosion just before the last dragstrip. It now makes 1000.0 hp at the rear wheels. Contrast that with the 415 rear wheel hp that the F40 made. Of course, a loaded testarossa does weigh about 4000 lbs..</p>
+<p>My project car is somewhat nearing completion. My mechanic says it will be running in six weeks, but mechanics can be even more optimistic than software developers. :) I'm betting on fall. It should really be something when completed: a carbon fiber bodied ferrari GTO with a custom, one-of-a kind billet alluminum 4 valve DOHC 5.2L V12 with twin turbos running around 30 lbs of boost. It should be good for quite a bit more hp than my TR, and the entire car will only weigh 2400 lbs.</p>
+<hr />
+<p>The distance between a cool demo and production code is vast. Two months ago, I had some functional demos of several pieces of the Quake 3 rendering tech, but today it still isn't usable as a full replacement for ref_gl yet.</p>
+<p>Writing a modern game engine is a lot of work.</p>
+<p>The new architecture is turning out very elegent. Not having to support software rendering or color index images is helping a lot, but it is also nice to reflect on just how much I have learned in the couple years since the original Quake renderer was written.</p>
+<p>My C coding style has changed for Quake 3, which is going to give me a nice way of telling at a glance which code I have or haven't touched since Quake 2. In fact, there have been enough evolutions in my style that you can usually tell what year I wrote a piece of code by just looking at a single function:</p>
+<p>[code]
+/<em>
+=============
+=
+= Function headers like this are DOOM or earlier
+=
+=============
+</em>/</p>
+<h1>/*</h1>
+<h1>Function Headers like this are Quake or later</h1>
+<p>*/</p>
+<p>{
+// comments not indented were written on NEXTSTEP
+// (quake 1)</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// indented comments were written on</span>
+<span class="c1">// Visual C++ (glquake / quakeworld, quake2)</span>
+</code></pre></div>
+
+<p>}</p>
+<p>for (testnum=0 ; testnum&lt;4 ; testnum++)
+{   // older coding style
+}</p>
+<p>for (testNumber = 0 ; testNumber &lt; 4 ; testNumber++) {
+    // quake 3 coding style
+}
+[/code]</p>
+    </main>
+</body>
+</html>

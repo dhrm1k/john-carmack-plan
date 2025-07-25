@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1998-01-03</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1998-01-03</h1>
+        <p>New stuff fixed:</p>
+<ul>
+<li>timeout based non-active packet streams</li>
+<li>FS_Read with CD off checks</li>
+<li>dedicated server not allocate client ports</li>
+<li>qport proxy checking stuff</li>
+<li>fixed mouse wheel control</li>
+<li>forced newlines on several Cbuf_AddText ()</li>
+<li>if no nextmap on a level, just stay on same one</li>
+<li>chat maximums to prevent user forced overflows</li>
+<li>limit stringcmds per frame to prevent malicious use</li>
+<li>helped jumping down slopes</li>
+<li>checksum client move messages to prevent proxy bots</li>
+<li>challenge / response connection process</li>
+<li>fixed rcon</li>
+<li>made muzzle flash lights single frame, rather than 0.1 sec</li>
+</ul>
+<p>I still don't have an answer to the WAADRNOTAVAILABLE problem. I have made the packet stream as friendly as possible, but some computers are still choking.</p>
+<p>I managed to get fixes for address translating routers done without costing any bandwidth from the server, just a couple bytes from the client, which isn't usually a critical path.</p>
+<p>I have spent a fair amount of time trying to protect against "bad" users in this release. I'm sure there will be more things that come up, but I know I got a few of the ones that are currently being exploited.</p>
+<p>We will address any attack that can make a server crash. Other attacks will have to have the damage and prevelence weighed against the cost of defending against it.</p>
+<p>Client message overflows. The maximum number of commands that can be issued in a user packet has been limited. This prevents a client from doing enough "says" or "kills" to overflow the message buffers of other clients.</p>
+<p>Challenge on connection. A connection request to a server is now a two stage process of requesting a challenge, then using it to connect. This prevents denial of service attacks where connection packets with forged IPs are flooded at a server, preventing any other users from connecting until they timeout.</p>
+<p>Client packet checksumming. The packets are encoded in a way that will prevent proxies that muck with the packet contents, like the stoogebot, from working.</p>
+    </main>
+</body>
+</html>

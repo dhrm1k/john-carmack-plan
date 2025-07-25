@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1997-12-25</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1997-12-25</h1>
+        <p>We are going to release a new quake 2 executable that fixes the malicious server crashing problems Real Soon Now. It also fixes a ton of other problems that have been reported, so we are going to have to give it some good testing before releasing it.</p>
+<p>John Cash has two kids that would lynch him if he came in and worked on christmas, so we certainly won't be able to get a release candidate together before the weekend. I am fairly confidant we will have it released to the public on sunday.</p>
+<p>I have been spending most of my time on trinity research but I have still made quite a few fixes to Q2. John Cash has made many more (he is just finishing up the IPX coding, among other things).</p>
+<p>I have been doing a lot of testing over a proxy that gives me a very bad ping (400 - 800), so I was able to find and fix two significant errors with the prediction code.</p>
+<p>The reason why you get a jerk when running forward and firing rockets, blasters, or grenades is that the client side prediction code was blocking you on your own missiles.</p>
+<p>The jerky behavior on plats was due to a subtle error in the prediction error interpolation. A prediction error was causing oscillations as long as your latency, instead of smoothing out over just 100 ms. The plats are now smooth as long as you aren't dropping packets, and other mispredictions are also handled much better.</p>
+<p>There are still a lot of other things that will be fixed in an upcoming release, but this will definately be an executable worth grabbing.</p>
+<p>My fixes:</p>
+<ul>
+<li>zombies aren't being removed properly</li>
+<li>joystick not in menu</li>
+<li>classname for rockets and bolts</li>
+<li>no screaming when invulnerable and in lava</li>
+<li>lowered water blend values</li>
+<li>clear powerups when dead (no more breather sounds)</li>
+<li>only play "computer updated" three times max</li>
+<li>mapname serverinfo now updated properly</li>
+<li>changed "rejected a connection" to "Server is full"</li>
+<li>made console "rejected a connection" a developer only message</li>
+<li>made WSAWOULDBLOCK warning silent</li>
+<li>max 10 packets/second during connection process</li>
+<li>set cl_maxfps to 90</li>
+<li>increased loading plaque timeout value to 120 seconds</li>
+<li>paused not default to 1</li>
+<li>no savegame in deathmatch</li>
+<li>fixed ; binding from menu</li>
+<li>no crouch when airborne</li>
+<li>removed half-baked $ macro expansion</li>
+<li>pause on landing before re-jump (fixes no fall damage bug)</li>
+<li>public server framework</li>
+<li>no ; comment in config files</li>
+<li>teleporter events</li>
+<li>lower hyperblaster damage</li>
+<li>don't use PORT_ANY for clients!</li>
+<li>fix the entity number thing here</li>
+<li>don't re-check CD after the first time</li>
+<li>auto cddir from cd scan</li>
+<li>dissallow kill from intermissions</li>
+<li>faster rockets</li>
+<li>less bfg effect damage</li>
+<li>remove packet command from client</li>
+<li>strip trailing spaces on cmd_args</li>
+<li>added protocol to serverinfo</li>
+<li>used CMD_BACKUP instead of UPDATE_BACKUP for phone jack</li>
+<li>don't predict clip into your own missiles</li>
+<li>good netgraph</li>
+<li>validate userinfo for semicolons and quotes</li>
+<li>don't copy savegames on dedicated servers</li>
+<li>also check current directory for game dll loading</li>
+<li>changed connect packet on client to differ from server</li>
+<li>bump protocol version</li>
+<li>fixed error interpolation on plats</li>
+<li>only respawn with attack or jump</li>
+<li>fov as a userinfo</li>
+<li>show weapon icon if fov &gt; 90</li>
+</ul>
+    </main>
+</body>
+</html>

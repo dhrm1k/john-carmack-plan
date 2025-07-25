@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1999-05-30</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1999-05-30</h1>
+        <p>For the past couple of weeks, I have been spending some development time on linux, and for the first time on a non-NEXTSTEP unix platform, I have actually been enjoying it.</p>
+<p>While Id has been supporting linux since the Doom days, I have not personally been much of a linux user -- it was always ddt or zoid doing the actual coding and testing. Every year or so I would install a linux distribution and play around with it for a few days, but I would always leave feeling that it was still pretty crude (UI wise) compared to the NEXTSTEP UI I was used to, or even what I had used on other commercial unix workstations and windows.</p>
+<p>There have always been a ton of reasons to like linux, but the user interface was enough of an issue that I couldn't buy into it completely.</p>
+<p>The gnome user environment in Red Hat 6.0 is finally at a level that I consider it a valid alternative to commercial desktop environments. Overall, its still not as smooth, consistant, or complete as windows or the mac, but is does have its strong points, and things seem to be progressing quite rapidly.</p>
+<p>Its still not something you would give to a purely casual computer user, but I won't be surprised if even that changes in a couple years.</p>
+<p>CodeWarrior for linux is also a significant aspect of my enjoyment. Its a sort of crappy 1.0 port with a lot of little issues, but the editor works well enough, which is the important thing for me. I have never been able to stand vi or emacs for long enough to become proficient in them.</p>
+<p>The code that I have been playing with most is the matrox g200 GLX driver.</p>
+<p>Matrox is the first of the major 3D chip vendors that has had the guts to publicly release register level documentation for their 3D chips.</p>
+<p>An accelerated X windows OpenGL driver has been put together with this by building on top of the existing Mesa and GLX projects.</p>
+<p>It actually runs quake, quake2, and q3test. It doesn't run them FAST, but the quality is good, and I am impressed nonetheless. It is bordering on playable with all quality options set to the minimum on a fast computer, but it still has a ways to go before casual users should take a look at it.</p>
+<p>It is steadily improving, and I hope Matrox will be pleased enough with the progress that they will release the documentation for their setup engine to go with the rasterizer.</p>
+<p>In testing q3 on it, I noticed that with picmip set to 0, textures would get corrupted and it would never settle on a working set. The current Apple OpenGL drivers also have exactly this problem.</p>
+<p>The cool part is that this driver is completely open source. I downloaded the project code, browsed through it a bit, and changed two lines of code to fix the bug. That RULES.</p>
+<p>The next thing is sort of funny. I had been suspecting that a lot of the OpenGL drivers were clearing the entire depth buffer for each of the 3D icons on the status bar, instead of limiting it to the scissor region. I added code to the g200 driver to explicitly crop the clear region in the driver, but it never got executed. A little more investigation showed that I had been making an improper assumption for years -- scissor is not enabled by default. Doh.</p>
+<p>Ever since noticing that glquake cleared the screen borders when the view is sized down, I had been operating under the assumption that intergraph just had a bug in their drivers. I had double checked that glClear was supposed to be limited to the scissor region, so I thought they were just messing it up.</p>
+<p>Now I know that I was just being an idiot about that for the last three years... With scissor enabled, most of the cards got a few percent faster.</p>
+<ul>
+<li>dynamic curve level of detail. r_subdivisions determines the maximum level of detail, r_lodCurveError determines how quickly polygons are pulled out with distance</li>
+<li>devmap sets cheats 1, map sets cheats 0</li>
+<li>change weapon item upscale to 1.5 instead of 2</li>
+<li>always toss items forward, even if looking up or down</li>
+<li>draw ammo in grey while weapons are reloading</li>
+<li>change railgun shader while reloading</li>
+<li>fixed head models not showing proper skin</li>
+<li>skip all shell eject code when cg_brassTime 0</li>
+<li>fixed sound memory overallocation</li>
+<li>profiling and rearrangement</li>
+<li>fixed dead spectator bug</li>
+</ul>
+    </main>
+</body>
+</html>

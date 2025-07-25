@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1999-11-15</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1999-11-15</h1>
+        <p>The way vertex lighting is working in the existing demos is that only two pass shaders (lightmap * texture) were collapsed to a single pass, all other shaders stayed the same.</p>
+<p>Xian added some chrome and energy effects to parts of q3tourney2, which changed them from two pass to three pass shaders. We felt that that 50% increase on those polygons was justified in normal play, but as people have pointed out, when you are playing with vertex lighting, that three passes stays three passes instead of collapsing to a single pass, resulting in a 300% increase on those polygons over the way it was before. Still faster than lightmap mode, but a large variance over other parts of the level.</p>
+<p>Today I wrote new code to address that, and improve on top of it.</p>
+<p>Now when r_vertexlight is on, I force every single shader to a single pass. In the cases where it isn't a simple light*texture case, I try and intelligently pick the most representative pass and do some fixups on the shader modulations.</p>
+<p>This works our great, and brings the graphics load down to the minimum we can do with the data sets.</p>
+<p>Performance is still going to be down a couple msec a frame due to using dynamic compilation instead of dll's for the cgame, but that is an intentional tradeoff. You can obviously slow things down by running a lot of bots, but that is to be expected.</p>
+<p>I am still investigating the high idle dedicated server cpu utilization and a few other issues. The server cpu time will definately be higher than 1.08 due to the dynamic compiler, but again, that is an intentional tradeoff.</p>
+<p>A set of go-fast-and-look-ugly options:
+[code]
+r_mode 2
+r_colorbits 16
+r_texturemode GL_LINEAR_MIPMAP_NEAREST
+r_vertexlighting 1
+r_subdivisions 999
+r_lodbias 2
+cg_gibs 0
+cg_draw3dicons 0
+cg_brassTime 0
+cg_marks 0
+cg_shadows 0
+cg_simpleitems 1
+cg_drawAttacker 0
+[/code]</p>
+<ul>
+<li>icons for bot skills on scoreboard</li>
+<li>r_vertexlight is now "force single pass" for all shaders</li>
+<li>modified cd key check to be fire and forget on the client</li>
+<li>file handle debugging info in path command</li>
+<li>network address type of NA_BAD for failed resolves</li>
+<li>better command line variable overriding</li>
+<li>cache scoreboard for two seconds</li>
+<li>sync sound system before starting cinematics</li>
+<li>fixed many escapes disconnect from server exiting the game</li>
+<li>fixed shotgun pellets underwater expending all temp entities</li>
+</ul>
+    </main>
+</body>
+</html>

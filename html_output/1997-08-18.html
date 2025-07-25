@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1997-08-18</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1997-08-18</h1>
+        <p>I get asked about the DOOM source code every once in a while, so here is a full status update:</p>
+<p>The Wolfenstein code wasn't much of a service to release - it was 16 bit dos code, and there wasn't much you could do with it. Hell, I don't think it even compiled as released.</p>
+<p>The DOOM code should be a lot more interesting. It is better written, 32 bit, and portable. There are several interesting projects that immediately present themselves for working with the code. GLDOOM and a packet server based internet DOOM spring to mind. Even a client/server based DOOM server wouldn't be too hard to do.</p>
+<p>I originally intended to just dump the code on the net quite some time ago, but Bernd Kreimeier offered to write a book to explain the way the game works. There have been a ton of issues holding it up, but that is still the plan. If things aren't worked out by the end of the year, I will just release things in a raw form, though.</p>
+<p>My best case situation would be to release code that cleanly builds for win32 and linux. Bernd is doing some cleanup on the code, and some of the Ritual guys may lend a hand.</p>
+<p>One of the big issues is that we used someone else's sound code in dos DOOM (ohmygod was that a big mistake!), so we can't just release the full code directory. We will probably build something off of the quake sound code for the release.</p>
+<p>I think I am going to be able to get away with just making all the code public domain. No license, no copyleft, nothing. If you apreciate it, try to get a pirate or two to buy some of our stuff legit..</p>
+<ul>
+<li>
+<p>lightmap building errors</p>
+</li>
+<li>
+<p>qe4: build in detail mode</p>
+</li>
+<li>animating textures</li>
+<li>no different quantities on items?</li>
+<li>target_secretcounter</li>
+</ul>
+<p>the inherent problems of simplicity by complexity</p>
+    </main>
+</body>
+</html>

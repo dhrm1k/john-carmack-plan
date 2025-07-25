@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1998-01-01</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="back-link">← Back to Index</a>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">1998-01-01</h1>
+        <p>Some of the things I have changed recently:</p>
+<ul>
+<li>fixed the cinematics</li>
+<li>don't clear config after dedicated server</li>
+<li>don't reallocate sockets unless needed</li>
+<li>don't process channel packets while connecting</li>
+<li>rate variable for modem bandwidth choking</li>
+<li>delta compress client usercmds</li>
+<li>fixed sound quality changing after intermissions</li>
+<li>fixed PVS problem when head was directly under solid in GL</li>
+<li>added r_drawflat and cl_testlights to cheats</li>
+</ul>
+<p>There are a few problems that I am still trying to track down:</p>
+<p>WSAEADDRNOTAVAIL errors
+Map versions differ error
+Sometimes connecting and seeing messages but not getting in
+Decompression read overrun.</p>
+<p>Of course, we don't actually get any of those errors on any of our systems here, so I am having to work remotely with other users to try and fix them, which is a bit tougher.</p>
+<p>My new years resolution is to improve my coding style by bracing all single line statements and consistantly using following caps on multi word variable names.</p>
+<p>Actually, I am currently trying on the full sun coding style, but I'm not so sure about some of the comment conventions: don't use multiple lines of // comments, and don't use rows of seperating characters in comments. I'm not convinced those are good guidelines.</p>
+    </main>
+</body>
+</html>
